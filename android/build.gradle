@@ -14,12 +14,12 @@ def projectVar(name, fallback) {
 }
 
 android {
-    compileSdkVersion projectVar('compileSdkVersion', 23)
+    compileSdkVersion projectVar('compileSdkVersion', 34)
     buildToolsVersion projectVar('buildToolsVersion', '23.0.1')
 
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion projectVar('targetSdkVersion', 22)
+        targetSdkVersion projectVar('targetSdkVersion', 34)
         versionCode 1
         versionName "1.0"
     }
