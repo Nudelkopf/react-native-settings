@@ -1,6 +1,7 @@
 
 package io.rumors.reactnativesettings;
 
+import android.os.Build
 import android.provider.Settings;
 import android.content.Intent;
 import android.content.IntentFilter;
