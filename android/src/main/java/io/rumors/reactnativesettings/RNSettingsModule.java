@@ -91,7 +91,11 @@ public class RNSettingsModule extends ReactContextBaseJavaModule {
 
   private void registerReceiver(Context reactContext, String filter, BroadcastReceiver receiver) {
     IntentFilter intentFilter = new IntentFilter(filter);
-    reactContext.registerReceiver(receiver, intentFilter);
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+        getReactApplicationContext().registerReceiver(receiver, intentFilter, Context.RECEIVER_NOT_EXPORTED)
+    } else {
+        getReactApplicationContext().registerReceiver(receiver, intentFilter)
+    }
   }
 
   private void initReceivers() {
